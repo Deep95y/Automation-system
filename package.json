@@ -1,0 +1,27 @@
+{
+  "name": "attendance-system",
+  "version": "1.0.0",
+  "type": "commonjs",
+  "description": "- Receives punch logs from attendance devices: `POST /device/punch`\r - Validates & normalizes payloads\r - Prevents duplicate punches within a configurable window (default 60s)\r - Saves logs in MongoDB (`PunchLog` model)\r - Forwards logs to a simulated CRM endpoint `POST /crm/attendance/punch`\r - Implements a retry worker to retry failed logs every X seconds (default 10s) up to N times (default 3)",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "node test-api.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.7.9",
+    "body-parser": "^2.2.1",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "mongoose": "^9.0.0",
+    "morgan": "^1.10.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.11"
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "info": {
+    "name": "Attendance Middleware",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Device",
+      "item": [
+        {
+          "name": "Device Punch (happy path)",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"deviceId\": \"DEVICE_001\",\n  \"userId\": \"EMP102\",\n  \"timestamp\": \"2025-11-26T09:01:45\",\n  \"type\": \"IN\"\n}"
+            },
+            "url": { "raw": "http://localhost:3000/device/punch", "protocol": "http", "host": ["localhost"], "port": "3000", "path": ["device","punch"] }
+          }
+        },
+        {
+          "name": "Get All Punches",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": { "raw": "http://localhost:3000/device/punches?page=1&limit=50", "protocol": "http", "host": ["localhost"], "port": "3000", "path": ["device","punches"], "query": [{ "key": "page", "value": "1" }, { "key": "limit", "value": "50" }] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "CRM",
+      "item": [
+        {
+          "name": "Simulated CRM (fail)",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"deviceId\": \"DEVICE_001\",\n  \"userId\": \"EMP102\",\n  \"timestamp\": \"2025-11-26T09:01:45\",\n  \"type\": \"IN\"\n}"
+            },
+            "url": { "raw": "http://localhost:3000/crm/attendance/punch?fail=1", "protocol": "http", "host": ["localhost"], "port": "3000", "path": ["crm","attendance","punch"], "query": [{ "key": "fail", "value": "1" }] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Health",
+      "item": [
+        {
+          "name": "Health Check",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": { "raw": "http://localhost:3000/health", "protocol": "http", "host": ["localhost"], "port": "3000", "path": ["health"] }
+          }
+        }
+      ]
+    }
+  ]
+}
