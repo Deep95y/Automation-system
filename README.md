@@ -76,9 +76,3 @@
 - Config: `RETRY_INTERVAL_MS` (default 10000), `RETRY_LIMIT` (default 3)
 - Failed logs (`status: failed`) with `retryCount < RETRY_LIMIT` are retried by the worker
 
-## What to submit for assignment
-- Architecture diagram (image/pdf)
-- GitHub link to this code
-- Postman collection (`postman_collection.json`)
-- README.md
-- .env.example
