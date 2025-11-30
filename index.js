@@ -8,10 +8,10 @@ const retryQueue = require('./services/retryQueue.js');
 
 const app = express();
 app.use(morgan('dev'));
-app.use(express.json()); // Express 5 has built-in JSON parsing
+app.use(express.json()); 
 app.use(require('cors')());
 
-// Debug: Log all incoming requests
+// Log all incoming requests
 app.use((req, res, next) => {
   console.log(`${req.method} ${req.path}`);
   next();

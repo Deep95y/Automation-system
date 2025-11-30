@@ -1,5 +1,5 @@
 // Simulated CRM endpoint to receive punches.
-// Use ?fail=1 or set CRM_ALWAYS_FAIL=1 to simulate errors.
+
 const express = require('express');
 const router = express.Router();
 
